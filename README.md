@@ -31,13 +31,15 @@ echo "export ALLORA_PORT="27"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf allora-chain
 git clone https://github.com/allora-network/allora-chain
 cd allora-chain
 git checkout v0.8.3
 make install
+```
 
 # config and init app
 allorad init $MONIKER --chain-id $ALLORA_CHAIN_ID 
