@@ -24,14 +24,13 @@ source $HOME/.bash_profile
 ```
 
 **set vars**
-
+```
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export MONIKER="test"" >> $HOME/.bash_profile
 echo "export ALLORA_CHAIN_ID="allora-testnet-1"" >> $HOME/.bash_profile
 echo "export ALLORA_PORT="27"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
-
 **download binary**
 ```
 cd $HOME
@@ -84,11 +83,12 @@ s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${ALLORA_PO
 s%:26660%:${ALLORA_PORT}660%g" $HOME/.allorad/config/config.toml
 ```
 
-# config pruning
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.allorad/config/app.toml 
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.allorad/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"19\"/" $HOME/.allorad/config/app.toml
-
+```
 # set minimum gas price, enable prometheus and disable indexing
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0uallo"|g' $HOME/.allorad/config/app.toml
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.allorad/config/config.toml
