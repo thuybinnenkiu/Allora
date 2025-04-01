@@ -113,13 +113,15 @@ WantedBy=multi-user.target
 EOF
 ```
 
-# reset and download snapshot
+**reset and download snapshot**
+```
 allorad tendermint unsafe-reset-all --home $HOME/.allorad
 if curl -s --head curl https://undefined/testnet/allora/null | head -n 1 | grep "200" > /dev/null; then
   curl https://undefined/testnet/allora/null | lz4 -dc - | tar -xf - -C $HOME/.allorad
     else
   echo "no snapshot found"
 fi
+```
 
 # enable and start service
 sudo systemctl daemon-reload
