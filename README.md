@@ -180,7 +180,8 @@ while true; do
 done
 ```
 
-Create validator
+**Create validator**
+```
 Moniker
 Identity
 Details
@@ -194,6 +195,7 @@ Commission max rate
 Commission max change rate
 0.01
 Website
+```
 cd $HOME
 # Create validator.json file
 echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(allorad comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
