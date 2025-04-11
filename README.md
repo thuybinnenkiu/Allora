@@ -195,9 +195,12 @@ Commission max rate
 Commission max change rate
 0.01
 Website
-```
+
 cd $HOME
-# Create validator.json file
+```
+
+**Create validator.json file**
+```
 echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(allorad comet show-validator | grep -Po '\"key\":\s*\"\K[^"]*')\"},
     \"amount\": \"1000000uallo\",
     \"moniker\": \"test\",
@@ -210,6 +213,8 @@ echo "{\"pubkey\":{\"@type\":\"/cosmos.crypto.ed25519.PubKey\",\"key\":\"$(allor
     \"commission-max-change-rate\": \"0.01\",
     \"min-self-delegation\": \"1\"
 }" > validator.json
+```
+
 # Create a validator using the JSON configuration
 allorad tx staking create-validator validator.json \
     --from $WALLET \
