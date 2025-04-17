@@ -237,9 +237,11 @@ To protect you keys please don`t share your privkey, mnemonic and follow basic s
 ```
 You can use this guide to configure ssh authentication and disable password authentication on your server
 ```
-Firewall security
-Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
 
+**Firewall security**
+```
+Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
+```
 sudo ufw default allow outgoing 
 sudo ufw default deny incoming 
 sudo ufw allow ssh/tcp 
